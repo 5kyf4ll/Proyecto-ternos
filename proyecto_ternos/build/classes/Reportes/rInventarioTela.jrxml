@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rInventarioTela" language="groovy" pageWidth="595" pageHeight="550" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="92d3e07c-a1b6-41c4-851e-5f6318fbc71e">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="p_cod" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_marc" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_mod" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select idmodelo_tela,marca,nombre_modelo,precio,metros from v_ModeloTela where idmodelo_tela= $P{p_cod} and marca= $P{p_marc} 
+and nombre_modelo= $P{p_mod}]]>
+	</queryString>
+	<field name="idmodelo_tela" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_modelo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="metros" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="62" width="554" height="6" backcolor="#000000" uuid="5aa8b311-aaee-4378-83d8-ce0ee8731bf2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="172" y="30" width="293" height="26" uuid="5045e397-f032-4add-86bb-ac7c363df340"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVENTARIO DE TELAS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="79" y="8" width="476" height="22" forecolor="#006699" backcolor="#006699" uuid="4160abe2-83da-4d0e-ace3-13b55ec96bee"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="432" y="0" width="123" height="20" uuid="c56d6fee-4caa-4908-8954-5758a12f0698"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="127" height="21" uuid="977fc0e4-e206-48c2-b557-1335bb776752"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Inventario de Productos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="20" forecolor="#006699" backcolor="#006699" uuid="eecc04c7-2859-4f67-baf7-45295b623cb5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="0" width="78" height="20" forecolor="#FFFFFF" uuid="fb36071b-6157-41ec-926e-bb01765b533a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="0" width="156" height="20" forecolor="#FFFFFF" uuid="a81cc843-31f5-40d8-ad5a-9c46b5544539"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="0" width="208" height="20" forecolor="#FFFFFF" uuid="0914fa98-a277-435d-90fd-74578a089da6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="0" width="64" height="20" forecolor="#FFFFFF" uuid="080804fa-20f2-455f-9aa2-f15a5b91d4ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="507" y="0" width="48" height="20" forecolor="#FFFFFF" uuid="b824c919-725f-4f38-a932-810bfe04981d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stok (m)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="78" height="20" uuid="8736e908-46a7-48dd-a812-7d4df9ce0805"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{idmodelo_tela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="0" width="156" height="20" uuid="50592eb8-1d93-4d64-8295-c75c6aa9b7e2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="0" width="208" height="20" uuid="8a07e6d0-8c4f-4688-829c-ada02b22b3d1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nombre_modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="64" height="20" uuid="3feef004-60f2-4ab4-96cd-9f61a1430400"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="507" y="0" width="48" height="20" uuid="f6c46fe0-4b4c-41c3-943d-ceae55fb4eb5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{metros}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="0232329d-03e9-4a5f-85ea-ca9267717f7b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="cf9c4bc6-cad0-49d8-94e6-fc2b51237931"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="161" height="20" uuid="e5318422-9bf4-4d7e-9851-eb83b0f30966"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAZAR Y CONFECIONES Y&L]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="36" width="554" height="6" backcolor="#000000" uuid="7eb445f0-2acf-4098-90cd-e55b34af6335"/>
+			</rectangle>
+		</band>
+	</summary>
+</jasperReport>

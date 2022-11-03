@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rReciboF" language="groovy" pageWidth="550" pageHeight="842" columnWidth="510" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d3a55fbf-e3d4-4254-8ad6-5c3708c85946">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="rRuc" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call p_fichaf($P{rRuc});]]>
+	</queryString>
+	<field name="idventa_confec" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Razon Social" class="java.lang.String"/>
+	<field name="ruc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tela" class="java.lang.String"/>
+	<field name="Cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costo" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="canxcos" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="adelanto" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debe" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<rectangle>
+				<reportElement x="390" y="10" width="106" height="57" forecolor="#006699" backcolor="#CCCCCC" uuid="2041f6f6-5b36-4b91-95f6-78a4a0b909b4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="390" y="11" width="106" height="31" uuid="4b322260-8fde-4cde-bb49-da1043aee84d"/>
+				<textElement textAlignment="Center">
+					<font size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECIBO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="51" width="153" height="20" uuid="3b350e97-c24e-45af-9899-c5de316eaa6c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[BAZAR Y CONFECIONES Y&L]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="56" width="52" height="12" uuid="f1a6c81b-bd56-4136-b446-147560d76b4b"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Acash-Perú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="42" width="130" height="13" uuid="e7befdd0-a46f-4a9e-a3be-4ae2557719fa"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Cel: 920029401 - 973802624]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="29" width="219" height="13" uuid="6a28fc3f-b1e7-49b7-9942-d8f6c1b3c78d"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Ancash : Dirección Jr. San Martin N° 405 - Huaraz ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="71" width="496" height="3" backcolor="#000000" uuid="7cd305fd-8caf-4575-8676-e0fcaf8f4390"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="45" y="10" width="345" height="14" forecolor="#006699" backcolor="#006699" uuid="d8784384-7a44-4dc4-b09d-18c29e0dbdb8"/>
+			</rectangle>
+			<textField>
+				<reportElement x="393" y="42" width="100" height="20" uuid="dfae593e-653b-4c46-8c9b-e9fc3e015169"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{idventa_confec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="37" width="86" height="20" uuid="2edb48fd-3b8d-4fb6-8640-76761ee55b35"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RAZON SOCIAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="60" width="51" height="20" uuid="c436e072-1285-4093-9c22-6e4797d94c89"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="83" width="78" height="20" forecolor="#FFFFFF" uuid="7025e0b4-0c3f-480a-a0a1-cba2ef11e800"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Articulo]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="2" y="80" width="494" height="24" forecolor="#000000" backcolor="#006699" uuid="de88fba7-c982-4aee-87af-6dd78457e173"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="397" y="83" width="41" height="20" forecolor="#FFFFFF" uuid="888f748b-a7d8-46f7-bece-4135a7c06c64"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="348" y="83" width="48" height="20" forecolor="#FFFFFF" uuid="4b26f1ba-3451-4d5c-a1f9-b744bf499f86"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="83" width="54" height="20" forecolor="#FFFFFF" uuid="db53c726-935c-4614-990b-bb8e70a32581"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<line>
+				<reportElement x="347" y="80" width="1" height="23" uuid="c11f37f7-eedf-42e3-b35a-6573c4afe4fe"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="84" width="343" height="20" forecolor="#FFFFFF" uuid="347c6781-4b2f-453a-ace3-cb0174be8a32"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="395" y="81" width="1" height="23" uuid="c60e3d45-9b12-4104-bef2-cf5312cc2dd8"/>
+			</line>
+			<staticText>
+				<reportElement x="2" y="16" width="31" height="20" uuid="8c08134c-86aa-4d23-a37a-c3e187fa1ce5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="390" y="14" width="106" height="43" forecolor="#006699" backcolor="#CCCCCC" uuid="362c84df-6f1b-49ab-ba8a-a908ec018734"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="390" y="23" width="108" height="13" uuid="78471f55-7aeb-447b-9bf6-44fc8acb0d0b"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC: 10427174501]]></text>
+			</staticText>
+			<line>
+				<reportElement x="438" y="82" width="1" height="22" uuid="c1b0373c-5342-496d-b2f5-93eeebb64836"/>
+			</line>
+			<textField>
+				<reportElement x="33" y="17" width="100" height="20" uuid="291f530f-0408-47fd-b8ff-39e46f8722ad"/>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="36" width="279" height="20" uuid="ca0ceb5f-8f5e-479b-9a55-d230a6cedd1f"/>
+				<textFieldExpression><![CDATA[$F{Razon Social}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="60" width="317" height="20" uuid="5ece9c08-f6d3-45eb-8a73-01cb7d7cb998"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="22" width="494" height="1" uuid="98d675bb-71f0-4b2b-b0af-75235f90d354"/>
+			</line>
+			<line>
+				<reportElement x="2" y="1" width="1" height="22" uuid="ee906cba-a004-4712-8919-b21aca4c3443"/>
+			</line>
+			<line>
+				<reportElement x="495" y="2" width="1" height="21" uuid="fafc8b69-1dcc-4c91-b58a-4c6414964727"/>
+			</line>
+			<line>
+				<reportElement x="2" y="0" width="494" height="1" uuid="4a32fdb7-5fa2-48f8-ad49-3d246fcd3dcc"/>
+			</line>
+			<line>
+				<reportElement x="438" y="0" width="1" height="22" uuid="5d26b5d4-3173-48dd-8716-393af3754027"/>
+			</line>
+			<line>
+				<reportElement x="396" y="1" width="1" height="22" uuid="e4058222-ddb7-4cfb-92a6-55956440a587"/>
+			</line>
+			<line>
+				<reportElement x="348" y="1" width="1" height="21" uuid="6de3e1f2-0143-41cb-9035-339a581e93df"/>
+			</line>
+			<textField>
+				<reportElement x="14" y="3" width="319" height="20" uuid="796d08fa-97c5-411e-a438-09176dfc90fb"/>
+				<textFieldExpression><![CDATA[$F{Tela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="1" width="46" height="20" uuid="79c529be-c548-47f5-9606-438ccca1fd73"/>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="1" width="40" height="20" uuid="f1e8b2c0-c76a-444c-9ca1-6921fabfb381"/>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="3" width="54" height="20" uuid="6564d1a3-89bd-4baa-9ae5-5adfb51ce197"/>
+				<textFieldExpression><![CDATA[$F{canxcos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="141" y="36" width="226" height="20" uuid="32385c5b-dd0b-474a-9906-e794eb27f11d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Imprenta SOLGRAF, Telf:269854.RUC:0705835336]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="16" width="206" height="20" uuid="b2176b82-3851-4fea-be15-f84706cc351d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Salida la Mercaderia no se Acptan Devoluciones]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="203" y="29" width="143" height="1" uuid="f9df99a2-d4bd-4c61-9440-74602e02ded4"/>
+			</line>
+			<line>
+				<reportElement x="43" y="30" width="143" height="1" uuid="6f608217-73df-4f83-8e69-a4acaab44ea0"/>
+			</line>
+			<staticText>
+				<reportElement x="212" y="35" width="134" height="20" uuid="a4c010ff-b44e-46c1-bb4d-cf34bde855a8"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[JAVIER PAUCAR GARRO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="379" y="0" width="114" height="55" backcolor="#CCCCCC" uuid="5250231e-f579-41f1-b6a1-45768e38e540"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="390" y="30" width="36" height="20" uuid="726a6604-8db6-400a-aa8d-f9a163da2340"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Debe:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="5" width="63" height="24" uuid="7ec12280-86a6-490f-9656-73e626cfd6a1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adelanto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="46" y="33" width="140" height="20" uuid="7fc5a971-ddd6-4a21-a881-2074e81d1c0f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Razon Social}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="5" width="54" height="20" uuid="3556e6a8-bda4-4a75-82fd-bc226f6ad376"/>
+				<textFieldExpression><![CDATA[$F{adelanto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="29" width="55" height="20" uuid="b9ca0f59-b19f-4f49-ba4b-1f4393d63013"/>
+				<textFieldExpression><![CDATA[$F{debe}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

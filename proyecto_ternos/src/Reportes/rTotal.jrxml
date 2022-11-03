@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rTotal" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5d89414-ed39-4c1e-b131-cdbb6b95d5e9">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dia" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\PERSONAL\\Documents\\prueba\\proyecto_ternos\\src\\Reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call p_cajadehoy ($P{dia})]]>
+	</queryString>
+	<field name="caja" class="java.lang.Double"/>
+	<field name="date(fec)" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="69" width="554" height="3" backcolor="#000000" uuid="b40c3b29-9c56-4636-82cf-a89ca0bcacf6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="108" y="0" width="447" height="14" forecolor="#006699" backcolor="#006699" uuid="345b2392-5788-49e8-a014-1c0b5009dfd7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="49" width="153" height="20" uuid="99c9cf86-033d-426a-875b-759ced8c43cf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[BAZAR Y CONFECIONES Y&L]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="14" width="293" height="44" uuid="2a206544-ffab-45c1-ab78-beece03bd119"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Clarendon Blk BT" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE VENTAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="25" y="0" width="69" height="49" uuid="d42dc4c7-ce2a-46fd-84df-6b10a32e0774"/>
+				<imageExpression><![CDATA["C:\\Users\\PERSONAL\\Documents\\prueba\\proyecto_ternos\\src\\imagenes\\logo5.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="124" height="43" forecolor="#006699" backcolor="#CCCCCC" uuid="0711d00e-46ac-4d1b-91eb-293e78fe5dc7"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="12" width="40" height="20" uuid="669e9dfd-7328-4a95-a47c-db94fbca080c"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="12" width="61" height="20" uuid="9781dde3-6ae5-49d0-ad47-e4879af06d1b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date(fec)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="100" uuid="be628cf6-3c34-4b48-9f8f-4a0261937d41"/>
+				<subreportParameter name="p_dia">
+					<subreportParameterExpression><![CDATA[$P{dia}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "rVentaTotal.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="230" y="41" width="130" height="13" uuid="9b0fffb7-9de8-4100-9aa6-38f6eb6389d4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Cel: 920029401 - 973802624]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="28" width="219" height="13" uuid="022ab339-c8bf-4d9a-a8b6-1141f86d58f4"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Ancash : Dirección Jr. San Martin N° 405 - Huaraz ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="55" width="52" height="12" uuid="28d2c63a-1062-4705-afda-40e9bd6a10f2"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Acash-Perú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="8" width="118" height="20" uuid="524331bb-e29a-48a8-be81-95fd48c4f7b0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[BAZAR Y CONFECIONES Y&L]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="433" y="0" width="80" height="20" uuid="9679f5d4-cab7-4ff8-a874-cf27d7e3ad03"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="513" y="0" width="40" height="20" uuid="61b689cd-b108-4080-9f74-823b11fb8c6d"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="456" y="6" width="98" height="24" backcolor="#CCCCCC" uuid="9f7b5c39-7e1e-4d2e-b4d8-49f5cab52652"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="466" y="10" width="36" height="20" uuid="5c61da46-fb3e-4d7d-8b5a-7d3fc8d96fb8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="502" y="10" width="76" height="20" uuid="ddf4698c-3993-4198-9aa2-d4991ca56104"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{caja}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

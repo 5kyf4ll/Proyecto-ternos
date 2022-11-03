@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rVentaTotal" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ccb8beb3-9fa6-45bd-b1de-ef7ec50e57c2">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="179"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="p_dia" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call p_ventadehoy ($P{p_dia})]]>
+	</queryString>
+	<field name="emision" class="java.lang.String"/>
+	<field name="DNI o RUC" class="java.lang.String"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="costo" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="24" forecolor="#000000" backcolor="#006699" uuid="6c28a6df-8084-4b65-a8f4-6aac1712d4f2"/>
+			</rectangle>
+			<line>
+				<reportElement x="87" y="0" width="1" height="24" uuid="6c15c1ff-e183-4dfb-8dab-639b3bc4f443"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="0" width="86" height="20" forecolor="#FFFFFF" uuid="453ca537-c325-4342-a7cb-3d08c118d47c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPROBANTE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="187" y="0" width="1" height="24" uuid="812cb649-37b6-4f6a-9376-baa1f7528e5e"/>
+			</line>
+			<staticText>
+				<reportElement x="88" y="0" width="99" height="20" forecolor="#FFFFFF" uuid="807319e9-0bcd-45f3-bb8d-21595f88dbab"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DNI / RUC]]></text>
+			</staticText>
+			<line>
+				<reportElement x="474" y="0" width="1" height="24" uuid="5e8dadd3-821f-4e99-acae-68e1856a1161"/>
+			</line>
+			<staticText>
+				<reportElement x="188" y="0" width="286" height="20" forecolor="#FFFFFF" uuid="29ac486c-9a72-43af-933c-471cfc711e4e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="1" width="80" height="20" forecolor="#FFFFFF" uuid="6b6378ff-ae64-48b0-a870-70b6ea72e347"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COSTO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="21" width="554" height="1" uuid="bc443d7f-17d6-4047-8c50-f0e08b057d51"/>
+			</line>
+			<line>
+				<reportElement x="187" y="1" width="1" height="21" uuid="adddbc33-714f-4312-9295-a2315f1d559f"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="22" uuid="4ccd5e69-0c60-46a2-8cb0-2bbcea267096"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="1adf194e-d053-4fe4-9794-d3158a154f8f"/>
+			</line>
+			<line>
+				<reportElement x="87" y="1" width="1" height="21" uuid="b9a9f295-7f7e-4748-95b5-7ff0e764707b"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="22" uuid="b06c9bd0-87b2-47bb-ae00-95f28f444460"/>
+			</line>
+			<line>
+				<reportElement x="474" y="0" width="1" height="21" uuid="d8ed0baf-89ae-4bbb-ba89-4687e2ff0f56"/>
+			</line>
+			<textField>
+				<reportElement x="1" y="2" width="86" height="20" uuid="a1877438-9453-4b8e-bb8a-a1429ff33650"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{emision}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="2" width="99" height="20" uuid="1a769962-ae69-4d2a-8857-af02e5aecd5b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DNI o RUC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="1" width="287" height="20" uuid="5aada246-ff7f-4baa-ac15-3606d35b391e"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="1" width="80" height="20" uuid="7612dc80-8f52-45a5-83ce-79793e3d1d56"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
